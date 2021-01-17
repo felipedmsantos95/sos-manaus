@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import logoImg from '../../assets/images/sos.svg';
 
 import handShake from '../../assets/images/icons/handshake.svg';
-import bell from '../../assets/images/icons/bell.svg';
 import whiteHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 import api from '../../services/api';
