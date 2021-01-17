@@ -85,7 +85,7 @@ export default class UsersController {
 
             })
         } else {
-             response.status(400).json({error: 'Usuário ou senha incorretos'})
+             response.status(400).json({error: 'Usuário não encontrado, já fez cadastro?'})
 
         }
 
