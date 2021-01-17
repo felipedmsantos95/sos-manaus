@@ -1,4 +1,4 @@
-#page-teacher-list{
+#page-alerts{
   width: 100vw;
   height: 100vh;
 }
@@ -35,7 +35,7 @@
 }
 
 
-#page-teacher-list main{
+#page-alerts main{
   margin: 3.2rem auto;
   width: 90%;
 }
@@ -43,7 +43,7 @@
 
 
 @media(min-width: 700px){
-  #page-teacher-list{
+  #page-alerts{
     max-width: 100vw;
   }
 
@@ -58,7 +58,7 @@
     margin-top: 0;
   }
 
-  #page-teacher-list main{
+  #page-alerts main{
     padding: 3.2rem 0;
     max-width: 740px;
     margin: 0 auto;
