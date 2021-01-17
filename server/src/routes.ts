@@ -1,13 +1,13 @@
 import express from 'express';
-import ClassesController from './controllers/classesController';
+import DonationsController from './controllers/donationsController';
 import ConnectionsController from './controllers/connectionsController';
 
 const routes = express.Router();
-const classesControllers = new ClassesController();
+const donationsControllers = new DonationsController();
 const connectionController = new ConnectionsController();
 
-routes.post('/classes', classesControllers.create);
-routes.get('/classes', classesControllers.index)
+routes.post('/users', donationsControllers.create);
+routes.get('/users', donationsControllers.index)
 
 routes.post('/connections', connectionController.create);
 routes.get('/connections', connectionController.index);
