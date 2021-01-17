@@ -5,10 +5,8 @@ Plataforma web para centralizar doações para os hospitais de Manaus.
 ## Tecnologias utilizadas
 
 - React.js para front-end
-- React-Native para app mobile
 - Node.js para back-end
 - Banco de dados SQLite
-
 
 ## Requisitos
 
@@ -16,7 +14,6 @@ Para executar os módulos do projeto é necessário ter os seguintes requisitos 
 
 - Node 12.x ou superior
 - Yarn 1.21 ou superior
-- Expo-cli 3.15 ou superior
 
 ## Executando o projeto
 

@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 
 import Input from '../../components/Input';
-import Select from '../../components/Select';
 import Textarea from '../../components/Textarea';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
@@ -21,17 +20,39 @@ const AlertsForm: React.FC = () => {
   function handleCreateClass(e: FormEvent): void {
     e.preventDefault();
 
-    api
-      .post('users', {
-        name,
-        whatsapp,
-        cause,
-      })
-      .then(() => {
-        alert('Cadastro realizado com sucessso!');
-        history.push('/');
-      })
-      .catch(() => alert('Erro no cadastro!'));
+    const whats = "+55" + parseWhatsapp(whatsapp);
+
+    if (whatsapp.length === 15 && name.length !== 0 && cause.length !== 0) {
+      api
+        .post('users', {
+          name,
+          whatsapp: whats,
+          cause,
+        })
+        .then(() => {
+          alert('Cadastro realizado com sucessso!');
+          history.push('/');
+        })
+        .catch(() => alert('Erro no cadastro!'));
+    } else {
+      alert("Por favor, preencha todos os campos corretamente.")
+    }
+  }
+
+  function parseWhatsapp(number: string): string {
+    number = number.replace("(", "")
+    number = number.replace(")", "")
+    number = number.replace(" ", "")
+    number = number.replace("-", "")
+    return number
+  }
+
+  function maskTelephone(number: string): void {
+    number = number.replace(/\D/g, "");
+    number = number.replace(/^(\d{2})(\d)/g, "($1) $2");
+    number = number.replace(/(\d)(\d{4})$/, "$1-$2");
+
+    setWhatsapp(number);
   }
 
   return (
@@ -56,7 +77,9 @@ const AlertsForm: React.FC = () => {
               name="whatsapp"
               label="Whatsapp"
               value={whatsapp}
-              onChange={e => setWhatsapp(e.target.value)}
+              placeholder={"(99) 99999-9999"}
+              maxLength={15}
+              onChange={e => maskTelephone(e.target.value)}
             />
             <Textarea
               name="cause"
