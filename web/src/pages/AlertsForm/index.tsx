@@ -20,7 +20,7 @@ const AlertsForm: React.FC = () => {
   function handleCreateClass(e: FormEvent): void {
     e.preventDefault();
 
-    const whats = parseWhatsapp(whatsapp);
+    const whats = "+55" + parseWhatsapp(whatsapp);
 
     if (whatsapp.length === 15 && name.length !== 0 && cause.length !== 0) {
       api
