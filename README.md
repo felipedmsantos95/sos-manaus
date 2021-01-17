@@ -24,7 +24,7 @@ Para executar os módulos do projeto é necessário ter os seguintes requisitos 
 
 ```bash
 $ git clone https://github.com/felipedmsantos95/proffy
-$ cd proffy
+$ cd sos-manaus
 ```
 
 ### Executando Backend
