@@ -23,7 +23,7 @@ Para executar os módulos do projeto é necessário ter os seguintes requisitos 
 ### Clonando o projeto
 
 ```bash
-$ git clone https://github.com/felipedmsantos95/proffy
+$ git clone https://github.com/felipedmsantos95/sos-manaus
 $ cd sos-manaus
 ```
 
