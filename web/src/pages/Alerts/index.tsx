@@ -1,33 +1,22 @@
 /* eslint-disable react/jsx-curly-newline */
-import React, { useState, FormEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeader from '../../components/PageHeader';
-import TeacherItem, { Teacher } from '../../components/TeacherItem';
-
-import Input from '../../components/Input';
-import Select from '../../components/Select';
+import AlertItem, { Alert } from '../../components/AlertItem';
 
 import api from '../../services/api';
-
 import './styles.css';
 
 const Alerts: React.FC = () => {
-  const [teachers, setTeachers] = useState([]);
-  const [subject, setSubject] = useState('');
-  const [week_day, setWeekDay] = useState('');
-  const [time, setTime] = useState('');
+  const [alerts, setAlerts] = useState([]);
 
-  async function searchTeachers(e: FormEvent): Promise<void> {
-    e.preventDefault();
+  useEffect(() => {
+    fetchAlerts()
+  }, [])
 
-    const response = await api.get('classes', {
-      params: {
-        subject,
-        week_day,
-        time,
-      },
-    });
+  async function fetchAlerts() {
+    const response = await api.get('users');
 
-    setTeachers(response.data);
+    setAlerts(response.data);
   }
 
   return (
@@ -35,8 +24,8 @@ const Alerts: React.FC = () => {
       <PageHeader title="Estas são as causas disponíveis." />
 
       <main>
-        {teachers.map((teacher: Teacher) => {
-          return <TeacherItem key={teacher.id} teacher={teacher} />;
+        {alerts.map((alert: Alert) => {
+          return <AlertItem key={alert.id} alert={alert} />;
         })}
       </main>
     </div>
