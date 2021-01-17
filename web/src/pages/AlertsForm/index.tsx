@@ -14,48 +14,18 @@ import './styles.css';
 const AlertsForm: React.FC = () => {
   const history = useHistory();
   const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
+  const [cause, setCause] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
-  const [bio, setBio] = useState('');
 
-  const [subject, setSubject] = useState('');
-  const [cost, setCost] = useState('');
-
-  const [scheduleItems, setScheduleItems] = useState([
-    { week_day: 0, from: '', to: '' },
-  ]);
-
-  function addNewScheduleItem(): void {
-    setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }]);
-  }
-
-  function setScheduleItemValue(
-    position: number,
-    field: string,
-    value: string,
-  ): void {
-    const newScheduleItems = scheduleItems.map((scheduleItem, index) => {
-      if (index === position) {
-        return { ...scheduleItem, [field]: value };
-      }
-      return scheduleItem;
-    });
-
-    setScheduleItems(newScheduleItems);
-  }
 
   function handleCreateClass(e: FormEvent): void {
     e.preventDefault();
 
     api
-      .post('classes', {
+      .post('users', {
         name,
-        avatar,
         whatsapp,
-        bio,
-        subject,
-        cost: Number(cost),
-        schedule: scheduleItems,
+        cause,
       })
       .then(() => {
         alert('Cadastro realizado com sucessso!');
@@ -89,10 +59,10 @@ const AlertsForm: React.FC = () => {
               onChange={e => setWhatsapp(e.target.value)}
             />
             <Textarea
-              name="bio"
+              name="cause"
               label="Descrição da causa"
-              value={bio}
-              onChange={e => setBio(e.target.value)}
+              value={cause}
+              onChange={e => setCause(e.target.value)}
             />
           </fieldset>
 
