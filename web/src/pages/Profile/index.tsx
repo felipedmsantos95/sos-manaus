@@ -37,7 +37,7 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     fetchNewCards();
-  })
+  }, [id])
 
   async function fetchNewCards() {
     try {
