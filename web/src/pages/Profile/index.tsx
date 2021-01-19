@@ -39,6 +39,21 @@ const Profile: React.FC = () => {
                         <FiTrash2 size={20} color="#a8a8b3"/>
                     </button>
                 </li>
+                <li >
+                    <strong>Nome:</strong>
+                    <p>evoney</p>
+
+                    
+                    <strong>Whatsapp:</strong>
+                    <p>(92) 996181893</p>
+
+                    <strong>Causa:</strong>
+                    <p>ola, quero diero</p>
+
+                    <button type="button">
+                        <FiTrash2 size={20} color="#a8a8b3"/>
+                    </button>
+                </li>
             </ul>
         </div>
   );

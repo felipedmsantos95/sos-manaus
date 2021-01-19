@@ -12,6 +12,8 @@ const Register: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [confirmacao, setConfirmacao] = useState('');
+
 
   const history = useHistory();
 
@@ -67,6 +69,10 @@ const Register: React.FC = () => {
             <input type="senha" placeholder="Senha"
             value = {senha}
             onChange = {e => setSenha(e.target.value)}
+            />
+            <input type="senha" placeholder="Confirme sua senha"
+            value = {confirmacao}
+            onChange = {e => setConfirmacao(e.target.value)}
             />
 
             <button className="button" type="submit">Cadastrar</button>
