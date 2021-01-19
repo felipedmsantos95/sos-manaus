@@ -10,56 +10,55 @@ import './styles.css';
 
 const Logon: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
   async function handleLogin(e: FormEvent) {
-
     e.preventDefault();
-
-    try {
-      
-      const response = await api.post('/signin', { email, senha });
-      
-      localStorage.setItem('email', email);
-      localStorage.setItem('senha', response.data.senha);
-      history.push('/profile')
-
-    } catch (err){
-      alert('Falha no login, tente novamente.')
+    if (email.length !== 0 && password.length !== 0) {
+      try {
+        const response = await api.post('signin', { email, password });
+        localStorage.setItem('name', response.data.name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('id', response.data.user_id);
+        history.push('/profile');
+      } catch (err) {
+        alert('Falha no login, tente novamente.')
+      }
+    } else {
+      alert('Por favor, preencha todos os campos.')
     }
- 
   }
- 
 
-  return ( 
-
+  return (
     <div className="logon-container">
-        <section className="form">
+      <section className="form">
 
-            <form onSubmit={handleLogin}>
-                <h1>Faça seu login</h1>
+        <form onSubmit={handleLogin}>
+          <h1>Faça seu login</h1>
 
-                <input 
-                  placeholder="E-mail"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                />
+          <input
+            placeholder="E-mail"
+            type={"email"}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <input
+            placeholder="Senha"
+            value={password}
+            type={"password"}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <button className="button" type="submit">Entrar</button>
 
-                 <input 
-                  placeholder="Senha"
-                  value={senha}
-                  onChange={e => setSenha(e.target.value)}
-                />
-                <button className="button" type="submit">Entrar</button>
-
-                <Link className="back-link" to="/register"> 
-                    <FiLogIn size={16} color="#E02041"/>
+          <Link className="back-link" to="/register">
+            <FiLogIn size={16} color="#E02041" />
                     Cadastrar
                 </Link>
-            </form>
-        </section>
-      </div> 
+        </form>
+      </section>
+    </div>
   );
 };
 

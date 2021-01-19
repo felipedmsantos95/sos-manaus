@@ -19,7 +19,7 @@ const Landing: React.FC = () => {
 
       setTotalConnections(total);
     });
-  }, []); 
+  }, []);
 
   return (
     <div id="page-landing">
@@ -38,12 +38,8 @@ const Landing: React.FC = () => {
         <div className="buttons-container">
           <Link to="/alert" className="alert">
             <img src={handShake} alt="Doar" />
-            Doe
+            Ajudar
           </Link>
-          {/* <Link to="/alert-forms" className="alert-forms">
-            <img src={bell} alt="Pedir" />
-            Peça
-          </Link> */}
         </div>
 
         <span className="total-connections">

@@ -7,7 +7,7 @@ import api from '../../services/api';
 export interface Alert {
   id: number;
   cause: string;
-  name: string;
+  name_cause: string;
   whatsapp: string;
 }
 
@@ -36,7 +36,7 @@ const AlertItem: React.FC<AlertItemProps> = ({ alert }) => {
     <article className="alert-item">
       <header>
         <div>
-          <strong>{alert.name}</strong>
+          <strong>{alert.name_cause}</strong>
           <span>{maskTelephone(alert.whatsapp)}</span>
         </div>
       </header>

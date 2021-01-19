@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-curly-newline */
-import React, { useState, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import PageHeaderForms from '../../components/PageHeaderForms';
 
@@ -12,28 +12,37 @@ import './styles.css';
 
 const AlertsForm: React.FC = () => {
   const history = useHistory();
-  const [name, setName] = useState('');
+  const [nameCause, setNameCause] = useState('');
   const [cause, setCause] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [id, setId] = useState<string>('');
 
+  useEffect(() => {
+    const idUser = localStorage.getItem('id');
+    if (idUser) {
+      setId(idUser);
+    }
+  }, [])
 
   function handleCreateClass(e: FormEvent): void {
     e.preventDefault();
-
+    console.log(id)
     const whats = "+55" + parseWhatsapp(whatsapp);
 
-    if (whatsapp.length === 15 && name.length !== 0 && cause.length !== 0) {
-      api
-        .post('users', {
-          name,
-          whatsapp: whats,
-          cause,
-        })
-        .then(() => {
-          alert('Cadastro realizado com sucessso!');
-          history.push('/');
-        })
-        .catch(() => alert('Erro no cadastro!'));
+    if (whatsapp.length === 15 && nameCause.length !== 0 && cause.length !== 0) {
+      const body = {
+        name_cause: nameCause,
+        whatsapp: whats,
+        cause
+      }
+
+      api.post('donations', body, { headers: { authorization: id } }).then(() => {
+        alert('Cadastro realizado com sucessso!');
+        history.push('/profile');
+      }).catch((err) => {
+        alert('Erro no cadastro!');
+        console.log(err.response.data)
+      })
     } else {
       alert("Por favor, preencha todos os campos corretamente.")
     }
@@ -68,10 +77,10 @@ const AlertsForm: React.FC = () => {
             <legend>Seus dados</legend>
 
             <Input
-              name="name"
-              label="Nome completo"
-              value={name}
-              onChange={e => setName(e.target.value)}
+              name="nameCause"
+              label="Nome da causa"
+              value={nameCause}
+              onChange={e => setNameCause(e.target.value)}
             />
             <Input
               name="whatsapp"
