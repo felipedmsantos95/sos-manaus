@@ -13,29 +13,47 @@ const Profile: React.FC = () => {
   return ( 
     <div className="profile-container">
             <header>
-                <img src={logoImg} alt="Be The Hero"/>
-                <span>Bem vinda, {}</span>
-                <Link className="button" to="incidents/new">Cadastrar novo caso</Link>
-                <button type="button" title="logout">
+                <img src={logoImg} alt="Sos Manaus"/>
+                <span>Bem vindo, Amado</span>
+                <Link className="button" to="/alert-forms">Cadastrar novo caso</Link>
+                <button onClick={() => {}} type="button" title="logout">
                     <FiPower size={18} color= "#E02041"/>
                 </button>
             </header>
 
             <h1>Casos Cadastrados</h1>
-            
+              
             <ul>
                     <li >
-                    <strong>CASO:</strong>
-                    <p></p>
+                    <strong>Nome:</strong>
+                    <p>evoney</p>
 
-                    <strong>DESCRIÇÃO:</strong>
-                    <p></p>
+                    
+                    <strong>Whatsapp:</strong>
+                    <p>(92) 996181893</p>
+
+                    <strong>Causa:</strong>
+                    <p>ola, quero diero</p>
 
                     <button type="button">
                         <FiTrash2 size={20} color="#a8a8b3"/>
                     </button>
                 </li>
-                ))
+                <li >
+                    <strong>Nome:</strong>
+                    <p>evoney</p>
+
+                    
+                    <strong>Whatsapp:</strong>
+                    <p>(92) 996181893</p>
+
+                    <strong>Causa:</strong>
+                    <p>ola, quero diero</p>
+
+                    <button type="button">
+                        <FiTrash2 size={20} color="#a8a8b3"/>
+                    </button>
+                </li>
             </ul>
         </div>
   );

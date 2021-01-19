@@ -15,7 +15,7 @@
   --color-text-title: #32264D;
   --color-text-complement: #9C98A6;
   --color-text-base: #6A6180;
-  --color-line-in-white: #E6E6F0;
+  --color-line-in-white: #E6E6F0; 
   --color-input-background: #F8F8FC;
   --color-button-text-red: #ce3636;
   --color-button-text-white: #ffffff;
@@ -28,6 +28,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
@@ -53,6 +54,10 @@ textarea{
   color: var(--color-text-base);
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   width: 90vw;
   max-width: 700px;
@@ -62,4 +67,66 @@ textarea{
   :root {
     font-size: 62.5%;
   }
+}
+
+form input {
+  width: 100%;
+  height: 60px; 
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+
+form textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 140px;
+  height: 60px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 16px 24px;
+  line-height: 24px;
+}
+
+
+.button {
+  width: 100%;
+  height: 60px;
+  background: #e02041;
+  border: 0;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: 700;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.4s
+}
+
+.button:hover {
+  filter: brightness(70%);
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  color: #41414d;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.back-link svg {
+  margin-right: 8px;
+}
+
+.back-link:hover {
+  opacity: 0.8;
 }
