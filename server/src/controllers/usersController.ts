@@ -77,6 +77,7 @@ export default class UsersController {
                 const payload = { user_id: user.id, email: user.email }
 
                 let data = {
+                    user_id: user.id,
                     name: user.name,
                     email: user.email,
                     token: jwt.encode(payload, authSecret),
