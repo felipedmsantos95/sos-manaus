@@ -48,7 +48,7 @@ const Register: React.FC = () => {
         <h1>Cadastro</h1>
         <p>Faça seu cadastro, entre na plataforma e ajude as pessoas encontrar os casos para doações</p>
 
-        <Link className="back-link" to="/">
+        <Link className="back-link" to="/logon">
         <FiArrowLeft size={16} color="E02041"/>
          Voltar a tela de login
          </Link>
@@ -77,4 +77,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default Register; 

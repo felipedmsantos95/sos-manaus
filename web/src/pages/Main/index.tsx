@@ -19,7 +19,7 @@ const Landing: React.FC = () => {
 
       setTotalConnections(total);
     });
-  }, []);
+  }, []); 
 
   return (
     <div id="page-landing">
