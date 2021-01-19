@@ -24,7 +24,7 @@ const AlertsForm: React.FC = () => {
     }
   }, [])
 
-  function handleCreateClass(e: FormEvent): void {
+  async function handleCreateClass(e: FormEvent) {
     e.preventDefault();
     console.log(id)
     const whats = "+55" + parseWhatsapp(whatsapp);
@@ -36,7 +36,7 @@ const AlertsForm: React.FC = () => {
         cause
       }
 
-      api.post('donations', body, { headers: { authorization: id } }).then(() => {
+      await api.post('donations', body, { headers: { authorization: id } }).then(() => {
         alert('Cadastro realizado com sucessso!');
         history.push('/profile');
       }).catch((err) => {

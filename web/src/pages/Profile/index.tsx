@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower } from 'react-icons/fi';
+import trash from '../../assets/images/icons/delete.svg';
 
 import logoImg from '../../assets/images/sos.svg';
 
@@ -18,26 +19,16 @@ interface cardCauses {
 
 const Profile: React.FC = () => {
   const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [token, setToken] = useState<string>('');
   const [id, setId] = useState<string>('');
   const [card, setCard] = useState<cardCauses[]>([]);
   const history = useHistory();
 
   useEffect(() => {
     const nameUser = localStorage.getItem('name');
-    const emailUser = localStorage.getItem('email');
-    const tokenUser = localStorage.getItem('token');
     const idUser = localStorage.getItem('id');
 
     if (nameUser) {
       setName(nameUser);
-    }
-    if (emailUser) {
-      setEmail(emailUser);
-    }
-    if (tokenUser) {
-      setToken(tokenUser);
     }
     if (idUser) {
       setId(idUser);
@@ -46,7 +37,7 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     fetchNewCards();
-  }, [email])
+  })
 
   async function fetchNewCards() {
     try {
@@ -64,6 +55,16 @@ const Profile: React.FC = () => {
     localStorage.removeItem('email');
     localStorage.removeItem('token');
     history.replace('/logon');
+  }
+
+  async function handleDeleteCause(idCause: number) {
+    await api.delete(`donations/${idCause}`, { headers: { authorization: id } })
+      .then(() => {
+        const newArray = card.filter((item) => item.id !== idCause)
+        setCard(newArray);
+      }).catch((err) => {
+        alert("Erro em deletar a causa.")
+      })
   }
 
   return (
@@ -93,8 +94,11 @@ const Profile: React.FC = () => {
             <strong>Causa:</strong>
             <p>{item.cause}</p>
 
-            <button type="button">
-              <FiTrash2 size={20} color="#a8a8b3" />
+            <button type="button" onClick={() => handleDeleteCause(item.id)}>
+              <img
+                src={trash}
+                alt="trash"
+              />
             </button>
           </li>
         ))}
