@@ -14,7 +14,7 @@ const Alerts: React.FC = () => {
   }, [])
 
   async function fetchAlerts() {
-    const response = await api.get('users');
+    const response = await api.get('alldonations');
 
     setAlerts(response.data);
   }

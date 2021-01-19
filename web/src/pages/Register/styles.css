@@ -1,6 +1,5 @@
 .register-container {
     width: 100%;
-    max-width: 1120px;
     height: 100vh;
     margin: 0 auto;
 
@@ -56,4 +55,8 @@
 
 .register-container .content form .input-group input + input{
     margin-left: 8px;
+}
+
+@media (min-width: 1100px){
+
 }
