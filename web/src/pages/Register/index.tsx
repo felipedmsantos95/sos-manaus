@@ -44,19 +44,16 @@ const Register: React.FC = () => {
 
 
   return (
-    <div className="register-container">
-      <div className="content">
+    <div id="register-container">
+      <div id="content-responsive" className="content">
         <section>
           <img src={logoImg} alt="SOS MANAUS" />
-
           <h1>Cadastro</h1>
-          <p>Faça seu cadastro, entre na plataforma e ajude as pessoas encontrar os casos para doações</p>
-
+          <p>Faça seu cadastro, entre na plataforma e ajude as pessoas encontrar os casos para doações.</p>
           <Link className="back-link" to="/logon">
             <FiArrowLeft size={16} color="E02041" />
          Voltar a tela de login
          </Link>
-
         </section>
 
         <form onSubmit={handleRegister}>
@@ -88,7 +85,7 @@ const Register: React.FC = () => {
 
         </form>
       </div>
-    </div>
+    </div >
   );
 };
 
