@@ -1,62 +1,77 @@
-.register-container {
-    width: 100%;
+#register-container {
+    width: 100vw;
     height: 100vh;
-    margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.register-container .content{
-    width: 100%;
-    padding: 96px;
-    background: #f0f0f5;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-
-    display: flex;
+.content{
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 8rem;
+    background: var(--color-content-register);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
+    border-radius: 2.2rem;
 }
 
-.register-container .content section{
-    width: 100%;
-    max-width: 380px;
+.content section{
+    flex: 1;
+    max-width: 35rem;
+    margin-right: 10rem;
 }
 
-.register-container .content img{
+.content img{
     width: 60%;
 }
 
-.register-container .content section h1{
-    margin: 64px 0 32px;
-    font-size: 32px;
+.content section h1{
+    margin: 1rem 0 2rem;
+    font-size: 3.2rem;
 }
 
-.register-container .content section p{
-    font-size: 18px;
-    color: #737380;
-    line-height: 32px;
+.content section p{
+    font-size: 2rem;
+    text-align: justify;
+    color: var(--color-text-register);
 }
 
-.register-container .content form {
-    width: 100%;
-    max-width: 450px;
+.content form {
+    flex: 1;
+    max-width: 35rem;
+    margin-left: 10rem;
 }
 
-.register-container .content form input {
-    margin-top: 8px;
+.content form input {
+    margin-top: 1rem;
 }
 
-.register-container .content form .input-group {
+.content form .input-group {
     display: flex;
 }
 
-.register-container .content form .input-group input + input{
-    margin-left: 8px;
-}
+@media (max-width: 1000px){
+  #content-responsive{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-@media (min-width: 1100px){
+  #content-responsive section{
+    flex: 1;
+    width: 100%;
+    margin-top: 5rem;
+    margin-right: 0;
+  }
 
+  #content-responsive form{
+    flex: 1;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 0;
+  }
 }
