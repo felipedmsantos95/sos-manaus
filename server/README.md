@@ -1,11 +1,19 @@
 # Funcionalidades
 
-## Conexões
+## Usuários
 
-- Rota para listar o total de conexões realizadas;
+- Criar usuário
+- Listar usuários
+- Login de usuário
 
-## Aulas
+## Causas
 
-- Rota para criar uma aula;
-- Rota para listar aulas;
-    - Filtrar por matéria, dia da semana e horário;
+- Rota para usuário criar uma causa;
+- Rota para listar causas;
+- Filtrar lista de causas por usuario que a criou;
+- Deletar causa
+
+## Conexão
+
+- Rota pra criar conexao
+- Rota para exibir contagem de conexões

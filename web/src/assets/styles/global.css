@@ -21,8 +21,8 @@
   --color-button-text-white: #ffffff;
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
-
-
+  --color-content-register: #F0F0F5;
+  --color-text-register: #737380;
 }
 
 * {
