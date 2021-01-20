@@ -5,8 +5,7 @@
   --color-background: #F0F0F7;
   --color-primary-lighter: #eee7e7;
   --color-primary-light: #d4cfdf;
-  --color-primary: #ff6961;
-  --color-primary-dark: #ce3636;
+  --color-primary:  #ce3636;
   --color-primary-darker: #6842C2;
   --color-secundary: #ce3636;
   --color-secundary-dark: #cf4848;
@@ -94,7 +93,7 @@ form textarea {
 .button {
   width: 100%;
   height: 60px;
-  background: #e02041;
+  background: #ce3636;
   border: 0;
   border-radius: 8px;
   color: #FFF;
