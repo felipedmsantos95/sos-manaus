@@ -84,24 +84,26 @@ const Profile: React.FC = () => {
       <h1>Casos Cadastrados</h1>
 
       <ul>
-        {card.map((item, index) => (
-          <li key={index}>
-            <strong>Nome da Causa:</strong>
-            <p>{item.name_cause}</p>
-            <strong>Whatsapp:</strong>
-            <p>{item.whatsapp}</p>
+        {card.map((item) => {
+          return (
+            <li key={item.id}>
+              <strong>Nome da Causa:</strong>
+              <p>{item.name_cause}</p>
 
-            <strong>Causa:</strong>
-            <p>{item.cause}</p>
+              <strong>Whatsapp:</strong>
+              <p>{item.whatsapp}</p>
 
-            <button type="button" onClick={() => handleDeleteCause(item.id)}>
-              <img
-                src={trash}
-                alt="trash"
-              />
-            </button>
-          </li>
-        ))}
+              <strong>Causa:</strong>
+              <p>{item.cause}</p>
+
+              <button type="button" onClick={() => handleDeleteCause(item.id)}>
+                <img
+                  src={trash}
+                  alt="trash" />
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
