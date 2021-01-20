@@ -1,6 +1,7 @@
 .logon-container {
     display: flex;
     width: 100vw;
+    max-width: 50rem;
     background: var(--color-background);
     justify-content: center;
     align-items: center;
