@@ -14,6 +14,7 @@ routes.post('/signin', usersController.signin);
 
 routes.post('/donations', donationsControllers.create);
 routes.get('/donations', donationsControllers.index);
+routes.get('/donation/:id', donationsControllers.indexOne);
 routes.get('/alldonations', donationsControllers.indexAll);
 routes.delete('/donations/:id', donationsControllers.delete);
 routes.put('/donations/:id', donationsControllers.edit);

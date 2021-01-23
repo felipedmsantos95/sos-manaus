@@ -2,6 +2,7 @@ import React, { useState, useEffect, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiPower } from 'react-icons/fi';
 import trash from '../../assets/images/icons/delete.svg';
+import edit from '../../assets/images/icons/edit.svg';
 
 import logoImg from '../../assets/images/sos.svg';
 
@@ -67,6 +68,11 @@ const Profile: React.FC = () => {
       })
   }
 
+  function handleEditCause(idCause: any) {
+    localStorage.setItem('idCause', idCause);
+    history.push('/edit-forms')
+  }
+
   return (
     <div className="profile-container">
       <header>
@@ -81,7 +87,7 @@ const Profile: React.FC = () => {
         </button>
       </header>
 
-      <h1>Casos Cadastrados</h1>
+      <h1>Causas Cadastradas</h1>
 
       <ul>
         {card.map((item) => {
@@ -96,9 +102,14 @@ const Profile: React.FC = () => {
               <strong>Causa:</strong>
               <p>{item.cause}</p>
 
-              <button type="button" onClick={() => handleDeleteCause(item.id)}>
+              <button type="button" className="button-delete" onClick={() => handleDeleteCause(item.id)}>
                 <img
                   src={trash}
+                  alt="trash" />
+              </button>
+              <button type="button" className="button-edit" onClick={() => handleEditCause(item.id)}>
+                <img
+                  src={edit}
                   alt="trash" />
               </button>
             </li>
