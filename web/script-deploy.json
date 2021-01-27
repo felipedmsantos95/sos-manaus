@@ -1,0 +1,10 @@
+{
+	"apps": [
+			{
+			"name": "frontend",
+			"script": "npm",
+			"args": "run deploy"
+			}
+	]
+}
+
