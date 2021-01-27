@@ -1,0 +1,50 @@
+.logon-header{
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  background-color: var(--color-primary);
+}
+
+.logon-header .top-bar-container{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-in-primary);
+  padding: 1.6rem 0;
+}
+
+.logon-header .top-bar-container a {
+  height: 3.2rem;
+  transition: opacity 0.2s;
+}
+
+.logon-header .top-bar-container a:hover{
+  opacity: 0.6;
+}
+
+.logon-header .top-bar-container > img {
+  height: 1.6rem;
+}
+
+.logon-header .header-content{
+  width: 100%;
+  align-items: center !important;
+  margin: 0 auto;
+  margin: 0.8rem auto;
+}
+
+.logon-header .header-content strong{
+  font: 700 3.6rem Archivo;
+  line-height: 4.2rem;
+  color: var(--color-title-in-primary);
+}
+
+.logon-header .header-content p{
+  max-width: 30rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--color-text-in-primary);
+  margin-top: 2.4rem;
+}

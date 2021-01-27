@@ -18,7 +18,7 @@ interface AlertItemProps {
 const AlertItem: React.FC<AlertItemProps> = ({ alert }) => {
   function createNewConnection(): void {
     api.post('connections', {
-      user_id: alert.id,
+      donation_id: alert.id,
     });
   }
 

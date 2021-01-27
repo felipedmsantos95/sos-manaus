@@ -78,6 +78,20 @@
     position: relative;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
 }
 
+.profile-container ul li .button-delete {
+    position: absolute;
+    right: 24px;
+    top: 240px; 
+    border: 0;
+}
+
+.profile-container ul li .button-edit {
+    position: absolute;
+    right: 24px;
+    top: 12px;
+    border: 0;
+}
+
 .profile-container ul li button{
     position: absolute;
     right: 24px;
@@ -93,6 +107,7 @@
 
 .profile-container ul li strong{
     display: block;
+    margin-top: 20px;
     margin-bottom: 16px;
     color: #fff;
 }

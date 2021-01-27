@@ -33,6 +33,20 @@ export default class DonationsController {
         return response.send(donations)
     }
 
+    async indexOne(request: Request, response: Response) {
+        const { id } = request.params
+
+        const donation = await db('donations')
+                                .where('id', id)
+                                .first()
+        
+        if(!donation)
+            return response.status(400).json({error: "Não existe uma causa com o ID informado."})
+
+        return response.send(donation)
+
+    }
+
     async create(request: Request, response: Response) {
         const {
             name_cause,

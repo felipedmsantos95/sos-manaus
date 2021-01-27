@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import LogonHeader from '../../components/LogonHeader';
 
 import api from '../../services/api';
 
@@ -30,31 +31,34 @@ const Logon: React.FC = () => {
   }
 
   return (
-    <div className="logon-container">
-      <section className="form">
-        <form onSubmit={handleLogin}>
-          <h1>Faça seu login</h1>
-          <input
-            placeholder="E-mail"
-            type={"email"}
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-          <input
-            placeholder="Senha"
-            value={password}
-            type={"password"}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <button className="button" type="submit">Entrar</button>
+    <><div id="page-alerts" className="container">
+      <LogonHeader title="" />
+      <main>
+      <div className="logon-container">
+        <section className="form">
+          <form onSubmit={handleLogin}>
+            <h1>Faça seu login</h1>
+            <input
+              placeholder="E-mail"
+              type={"email"}
+              value={email}
+              onChange={e => setEmail(e.target.value)} />
+            <input
+              placeholder="Senha"
+              value={password}
+              type={"password"}
+              onChange={e => setPassword(e.target.value)} />
+            <button className="button" type="submit">Entrar</button>
 
-          <Link className="back-link" to="/register">
-            <FiLogIn size={16} color="#E02041" />
-                    Cadastrar
-                </Link>
-        </form>
-      </section>
-    </div>
+            <Link className="back-link" to="/register">
+              <FiLogIn size={16} color="#E02041" />
+              Cadastrar
+            </Link>
+          </form>
+        </section>
+      </div>
+      </main>
+    </div></>
   );
 };
 
