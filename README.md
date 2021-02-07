@@ -2,6 +2,8 @@
 
 Plataforma web para centralizar doações para os hospitais de Manaus.
 
+[Disponível aqui](http://sosmanaus.ddns.net:5000/)
+
 ## Tecnologias utilizadas
 
 - React.js para front-end
